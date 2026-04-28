@@ -1,0 +1,30 @@
+<header class="header" [class.header--scrolled]="scrolled">
+  <div class="container header__inner">
+
+    <a class="header__logo" (click)="scrollTo('inicio')">
+      <span class="logo-ag">AG</span>
+      <span class="logo-codelab">Codelab</span>
+    </a>
+
+    <nav class="header__nav" [class.header__nav--open]="mobileMenuOpen">
+      <a (click)="scrollTo('inicio')">Inicio</a>
+      <a (click)="scrollTo('soluciones')">Soluciones</a>
+      <a (click)="scrollTo('ag-sender')">AG Sender</a>
+      <a (click)="scrollTo('automatizaciones')">Automatizaciones</a>
+      <a (click)="scrollTo('desarrollo')">Desarrollo a medida</a>
+      <a (click)="scrollTo('proceso')">Proceso</a>
+      <a (click)="scrollTo('contacto')">Contacto</a>
+    </nav>
+
+    <a class="btn btn--primary btn--nav-cta" (click)="scrollTo('contacto')">
+      Solicitar asesoría
+    </a>
+
+    <button class="header__burger" (click)="toggleMenu()" [class.open]="mobileMenuOpen" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<div class="mobile-overlay" [class.active]="mobileMenuOpen" (click)="closeMenu()"></div>

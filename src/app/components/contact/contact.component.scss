@@ -1,0 +1,176 @@
+.contact {
+  background: var(--navy);
+
+  &__header {
+    text-align: center;
+    margin-bottom: 56px;
+    .section-subtitle { margin: 0 auto; }
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 40px;
+    align-items: start;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.info-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+
+  &__icon {
+    font-size: 20px;
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  &__label {
+    font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 2px;
+  }
+
+  &__value {
+    font-size: 14px; color: rgba(255,255,255,0.85);
+    cursor: pointer;
+    overflow-wrap: anywhere;
+    &:hover { color: var(--teal-light); }
+  }
+}
+
+.whatsapp-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.form-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: 18px; font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 24px;
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+
+  label {
+    font-size: 13px; font-weight: 500;
+    color: var(--gray-600);
+  }
+
+  input, select, textarea {
+    font-family: var(--font-body);
+    font-size: 14px;
+    padding: 11px 14px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    color: var(--gray-800);
+    background: var(--white);
+    transition: border-color var(--transition);
+    outline: none;
+    width: 100%;
+
+    &:focus { border-color: var(--blue); }
+    &::placeholder { color: var(--gray-400); }
+  }
+
+  textarea { resize: vertical; min-height: 100px; }
+}
+
+.submit-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 4px;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+}
+
+.form-success {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 56px 36px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  .success-icon { font-size: 48px; }
+  h3 { font-size: 22px; font-weight: 700; color: var(--gray-800); }
+  p { font-size: 15px; color: var(--gray-600); }
+  .btn--outline { color: var(--blue); border-color: var(--blue); }
+}
+
+@media (max-width: 900px) {
+  .contact__layout { grid-template-columns: 1fr; }
+  .contact__info { flex-direction: row; flex-wrap: wrap; }
+  .info-card { flex: 1; min-width: 240px; }
+  .whatsapp-btn { flex: 0 0 100%; }
+}
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+  .form-card { padding: 24px; }
+  .contact__info { flex-direction: column; }
+  .contact__header { margin-bottom: 40px; }
+  .info-card { padding: 20px; }
+}
+
+@media (max-width: 420px) {
+  .form-card,
+  .form-success {
+    border-radius: var(--radius-lg);
+    padding: 22px 18px;
+  }
+
+  .info-item {
+    gap: 12px;
+
+    &__icon {
+      width: 34px;
+      height: 34px;
+      font-size: 18px;
+    }
+  }
+}

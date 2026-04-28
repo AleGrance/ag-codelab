@@ -1,0 +1,35 @@
+<section class="technologies section-pad" id="tecnologias">
+  <div class="container">
+
+    <div class="tech-block">
+      <div class="tech-block__header">
+        <span class="section-label section-label--muted">Stack tecnológico</span>
+        <h2 class="section-title">Tecnología para soluciones reales</h2>
+        <p class="section-subtitle">Usamos tecnologías modernas, probadas y adecuadas para cada caso de uso empresarial.</p>
+      </div>
+      <div class="techs-row">
+        <div class="tech-badge" *ngFor="let t of techs">
+          <span class="tech-badge__icon">{{ t.icon }}</span>
+          {{ t.name }}
+        </div>
+      </div>
+    </div>
+
+    <div class="trust-block">
+      <div class="trust-block__header">
+        <span class="section-label section-label--muted">Por qué AG Codelab</span>
+        <h2 class="section-title">Soluciones pensadas para operar en empresas reales</h2>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card" *ngFor="let t of trust">
+          <div class="trust-card__icon">{{ t.icon }}</div>
+          <div>
+            <h3>{{ t.title }}</h3>
+            <p>{{ t.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

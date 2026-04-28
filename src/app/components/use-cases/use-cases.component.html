@@ -1,0 +1,23 @@
+<section class="use-cases section-pad" id="casos-de-uso">
+  <div class="container">
+    <div class="use-cases__header">
+      <span class="section-label section-label--muted">Aplicaciones reales</span>
+      <h2 class="section-title">Soluciones aplicables a distintos tipos de empresas</h2>
+      <p class="section-subtitle">
+        Trabajamos con empresas de distintos rubros. Conocé cómo nuestras soluciones
+        se adaptan a cada sector.
+      </p>
+    </div>
+
+    <div class="cases-grid">
+      <div class="case-card" *ngFor="let c of cases">
+        <div class="case-card__icon">{{ c.icon }}</div>
+        <h3>{{ c.sector }}</h3>
+        <p>{{ c.desc }}</p>
+        <div class="case-card__tags">
+          <span class="case-tag" *ngFor="let t of c.tags">{{ t }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

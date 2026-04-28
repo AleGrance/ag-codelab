@@ -1,0 +1,92 @@
+.footer {
+  background: var(--gray-800);
+  color: rgba(255,255,255,0.7);
+
+  &__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 48px;
+    padding: 64px 24px 48px;
+  }
+
+  &__logo {
+    display: flex; align-items: baseline; gap: 2px;
+    margin-bottom: 14px; cursor: pointer;
+    .logo-ag {
+      font-family: var(--font-display); font-size: 20px; font-weight: 800;
+      color: var(--blue-light);
+    }
+    .logo-codelab {
+      font-family: var(--font-display); font-size: 20px; font-weight: 600;
+      color: var(--white);
+    }
+  }
+
+  &__desc {
+    font-size: 14px; line-height: 1.65;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 20px; max-width: 280px;
+  }
+
+  &__contact {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+
+  &__contact-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: rgba(255,255,255,0.55);
+    cursor: pointer; transition: color var(--transition);
+    overflow-wrap: anywhere;
+    &:hover { color: var(--teal-light); }
+    span { font-size: 15px; }
+  }
+
+  &__nav-title {
+    font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 16px;
+  }
+
+  &__nav ul, &__solutions ul {
+    display: flex; flex-direction: column; gap: 10px;
+    li a {
+      font-size: 14px; color: rgba(255,255,255,0.55);
+      cursor: pointer; transition: color var(--transition);
+      &:hover { color: rgba(255,255,255,0.9); }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 20px 0;
+  }
+
+  &__bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 48px 16px 32px;
+  }
+  .footer__bottom-inner { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 420px) {
+  .footer__logo {
+    .logo-ag,
+    .logo-codelab {
+      font-size: 18px;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+.automation {
+  background: var(--white);
+
+  &__header {
+    text-align: center;
+    margin-bottom: 56px;
+    .section-subtitle { margin: 0 auto; }
+  }
+
+  &__cta {
+    margin-top: 56px;
+    background: linear-gradient(135deg, #E6F1FB, var(--gray-50));
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+
+    &-text {
+      h3 { font-size: 20px; font-weight: 700; color: var(--gray-800); margin-bottom: 8px; }
+      p { font-size: 15px; color: var(--gray-600); }
+    }
+  }
+}
+
+.flows-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 20px;
+}
+
+.flow-card {
+  background: var(--gray-50);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  transition: all var(--transition);
+
+  &:hover {
+    background: var(--white);
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+    border-color: var(--blue-pale);
+  }
+
+  &__icon {
+    font-size: 24px;
+    width: 44px; height: 44px;
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__trigger, &__action {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 14px;
+    color: var(--gray-700, #3d3b4a);
+    line-height: 1.5;
+  }
+}
+
+.trigger-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+}
+
+.action-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.flow-arrow {
+  font-size: 18px;
+  color: var(--gray-400);
+  padding: 0 0 2px;
+}
+
+@media (max-width: 768px) {
+  .automation__cta {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 28px;
+    .btn { width: 100%; justify-content: center; }
+  }
+}
+
+@media (max-width: 480px) {
+  .automation__header { margin-bottom: 40px; }
+
+  .flow-card {
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .automation__cta { padding: 24px; }
+}

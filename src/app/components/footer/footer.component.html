@@ -1,0 +1,52 @@
+<footer class="footer">
+  <div class="container footer__inner">
+
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <span class="logo-ag">AG</span>
+        <span class="logo-codelab">Codelab</span>
+      </div>
+      <p class="footer__desc">
+        Desarrollo de software, automatización de procesos y soluciones con WhatsApp API para empresas.
+      </p>
+      <div class="footer__contact">
+        <a class="footer__contact-item" (click)="openWhatsApp()">
+          <span>💬</span> +595 986 153 301
+        </a>
+        <a class="footer__contact-item" href="mailto:alejandro.grance@agcodelab.com">
+          <span>📧</span> alejandro.grance&#64;agcodelab.com
+        </a>
+        <div class="footer__contact-item">
+          <span>📍</span> Asunción, Paraguay
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__nav">
+      <div class="footer__nav-title">Navegación</div>
+      <ul>
+        <li *ngFor="let link of links">
+          <a (click)="scrollTo(link.id)">{{ link.label }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer__solutions">
+      <div class="footer__nav-title">Soluciones</div>
+      <ul>
+        <li><a (click)="scrollTo('ag-sender')">AG Sender</a></li>
+        <li><a (click)="scrollTo('automatizaciones')">Automatización WA API</a></li>
+        <li><a (click)="scrollTo('desarrollo')">Sistemas web a medida</a></li>
+        <li><a (click)="scrollTo('casos-de-uso')">Casos de uso</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <span>© {{ year }} AG Codelab. Todos los derechos reservados.</span>
+      <span class="footer__bottom-right">Desarrollado en Paraguay 🇵🇾</span>
+    </div>
+  </div>
+</footer>

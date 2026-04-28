@@ -1,0 +1,21 @@
+<section class="process section-pad" id="proceso">
+  <div class="container">
+    <div class="process__header">
+      <span class="section-label section-label--muted">Metodología</span>
+      <h2 class="section-title">Cómo trabajamos</h2>
+      <p class="section-subtitle">
+        Un proceso claro y ordenado desde el primer contacto hasta el soporte post-implementación.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card" *ngFor="let step of steps; let i = index">
+        <div class="step-card__num">{{ step.num }}</div>
+        <div class="step-card__content">
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

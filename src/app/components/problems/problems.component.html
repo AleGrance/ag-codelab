@@ -1,0 +1,25 @@
+<section class="problems section-pad" id="problemas">
+  <div class="container">
+    <div class="problems__header">
+      <span class="section-label section-label--muted">Diagnóstico</span>
+      <h2 class="section-title">Convertimos procesos manuales en soluciones digitales</h2>
+      <p class="section-subtitle">Identificamos los puntos de fricción más comunes en las empresas y los resolvemos con software a medida.</p>
+    </div>
+
+    <div class="problems__grid">
+      <div class="problem-card" *ngFor="let item of problems">
+        <div class="problem-card__icon">{{ item.icon }}</div>
+        <div class="problem-card__content">
+          <div class="problem-card__problem">
+            <span class="label-x">✕</span>
+            {{ item.problem }}
+          </div>
+          <div class="problem-card__solution">
+            <span class="label-check">✓</span>
+            {{ item.solution }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

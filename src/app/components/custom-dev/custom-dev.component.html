@@ -1,0 +1,33 @@
+<section class="custom-dev section-pad" id="desarrollo">
+  <div class="container">
+    <div class="custom-dev__layout">
+
+      <div class="custom-dev__content">
+        <span class="section-label section-label--purple">Desarrollo a medida</span>
+        <h2 class="section-title section-title--light">Sistemas web a medida para empresas</h2>
+        <p class="section-subtitle section-subtitle--light">
+          Cada empresa trabaja de forma distinta. Por eso desarrollamos soluciones personalizadas
+          que se adaptan a tus procesos, usuarios, reglas de negocio e integraciones.
+        </p>
+        <p class="section-subtitle section-subtitle--light" style="margin-top: -8px;">
+          No solo desarrollamos el sistema: analizamos tu operación, proponemos la solución más
+          eficiente y la construimos con tecnología moderna y escalable.
+        </p>
+        <a class="btn btn--lg" style="background: var(--purple); color: white;" (click)="scrollTo('contacto')">
+          Solicitar cotización
+        </a>
+      </div>
+
+      <div class="custom-dev__grid">
+        <div class="sys-card" *ngFor="let sys of systems">
+          <div class="sys-card__icon">{{ sys.icon }}</div>
+          <div>
+            <div class="sys-card__name">{{ sys.name }}</div>
+            <div class="sys-card__desc">{{ sys.desc }}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

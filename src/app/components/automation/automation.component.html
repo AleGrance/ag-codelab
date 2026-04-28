@@ -1,0 +1,39 @@
+<section class="automation section-pad" id="automatizaciones">
+  <div class="container">
+    <div class="automation__header">
+      <span class="section-label section-label--muted">Automatización</span>
+      <h2 class="section-title">Automatizá procesos rutinarios con bots conectados a WhatsApp</h2>
+      <p class="section-subtitle">
+        Desarrollamos bots personalizados que conectan WhatsApp con tus sistemas internos,
+        bases de datos o servicios externos para enviar mensajes automáticos en el momento correcto.
+      </p>
+    </div>
+
+    <div class="flows-grid">
+      <div class="flow-card" *ngFor="let flow of flows">
+        <div class="flow-card__icon">{{ flow.icon }}</div>
+        <div class="flow-card__body">
+          <div class="flow-card__trigger">
+            <span class="trigger-label">Cuando</span>
+            {{ flow.trigger }}
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-card__action">
+            <span class="action-label">Entonces</span>
+            {{ flow.action }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="automation__cta">
+      <div class="automation__cta-text">
+        <h3>¿Tu empresa tiene procesos repetitivos que podrían automatizarse?</h3>
+        <p>Contanos cómo trabajás hoy y te mostramos cómo automatizarlo con WhatsApp API.</p>
+      </div>
+      <a class="btn btn--primary btn--lg" (click)="scrollTo('contacto')">
+        Quiero automatizar un proceso
+      </a>
+    </div>
+  </div>
+</section>
