@@ -5,12 +5,34 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  isolation: isolate;
   padding: 120px 0 80px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 58vw;
+    height: 58vw;
+    min-width: 580px;
+    min-height: 580px;
+    top: -18%;
+    left: 8%;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(55,138,221,0.26) 0%, rgba(26,111,191,0.16) 34%, transparent 70%);
+    filter: blur(60px);
+    opacity: 0.66;
+    transform: translate3d(0, 0, 0) scale(1);
+    animation: heroAmbientGlow 18s ease-in-out infinite;
+  }
 
   &__bg {
     position: absolute;
     inset: 0;
     pointer-events: none;
+    z-index: 0;
   }
 
   &__orb {
@@ -22,7 +44,8 @@
       height: 600px;
       top: -200px;
       right: -100px;
-      background: radial-gradient(circle, rgba(26,111,191,0.18) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(26,111,191,0.24) 0%, transparent 70%);
+      animation: heroOrbFloat 20s ease-in-out infinite;
     }
 
     &--2 {
@@ -30,7 +53,8 @@
       height: 400px;
       bottom: -100px;
       left: -50px;
-      background: radial-gradient(circle, rgba(29,158,117,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(29,158,117,0.16) 0%, transparent 70%);
+      animation: heroOrbFloatAlt 24s ease-in-out infinite;
     }
   }
 
@@ -240,6 +264,53 @@
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
+}
+
+@keyframes heroAmbientGlow {
+  0%, 100% {
+    opacity: 0.58;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  18% {
+    opacity: 0.7;
+    transform: translate3d(18vw, 8vh, 0) scale(1.16);
+  }
+  37% {
+    opacity: 0.62;
+    transform: translate3d(27vw, 20vh, 0) scale(1.06);
+  }
+  56% {
+    opacity: 0.72;
+    transform: translate3d(7vw, 30vh, 0) scale(1.18);
+  }
+  78% {
+    opacity: 0.6;
+    transform: translate3d(-12vw, 14vh, 0) scale(1.08);
+  }
+}
+
+@keyframes heroOrbFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  22% { transform: translate3d(-54px, 46px, 0) scale(1.08); }
+  45% { transform: translate3d(-104px, 108px, 0) scale(1.03); }
+  68% { transform: translate3d(-34px, 142px, 0) scale(1.12); }
+  84% { transform: translate3d(36px, 64px, 0) scale(1.05); }
+}
+
+@keyframes heroOrbFloatAlt {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  24% { transform: translate3d(58px, -34px, 0) scale(1.1); }
+  52% { transform: translate3d(116px, -86px, 0) scale(1.03); }
+  76% { transform: translate3d(34px, -128px, 0) scale(1.12); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    &::before,
+    &__orb {
+      animation: none;
+    }
+  }
 }
 
 @media (max-width: 900px) {
